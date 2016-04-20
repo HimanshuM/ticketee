@@ -52,5 +52,5 @@ group :development, :test do
 end
 
 group :test do
-  gem 'capybara', '2.1.0'
+  gem 'capybara', '2.7.0'
 end
