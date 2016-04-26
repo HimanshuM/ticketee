@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   # mount ActionCable.server => '/cable'
   root "projects#index"
 
-  resources :projects
+  resources :projects do
+	resources :tickets
+  end
 end

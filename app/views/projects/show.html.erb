@@ -3,4 +3,6 @@
 <%= @project.description %><br /><br />
 <%= link_to "Edit project", edit_project_path(@project) %> | <%= link_to "Delete project", project_path(@project), method: :delete, data: {confirm: "Are you sure you want to delete this project?" } %>
 <br />
+<%= link_to "New Ticket", new_project_ticket_path(@project) %>
+
 <%= link_to "Home", root_path %>
