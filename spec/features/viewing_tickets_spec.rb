@@ -3,12 +3,10 @@ require "rails_helper"
 feature "Viewing tickets" do
 	before do
 		nano = FactoryGirl.create(:project, name: "nano")
-
-		FactoryGirl.create :ticket, project: nano, title: "Make it shiny", description: "Gradients! Starbursts! Oh my!"
-
+		user = FactoryGirl.create :user
+		FactoryGirl.create :ticket, project: nano, title: "Make it shiny", description: "Gradients! Starbursts! Oh my!", user: user
 		internet_explorer = FactoryGirl.create :project, name: "Internet Explorer"
-
-		FactoryGirl.create :ticket, project: internet_explorer, title: "Standards compliance", description: "Isn't a joke"
+		FactoryGirl.create :ticket, project: internet_explorer, title: "Standards compliance", description: "Isn't a joke", user: user
 
 		visit "/"
 	end

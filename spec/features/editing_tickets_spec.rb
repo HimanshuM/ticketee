@@ -1,11 +1,14 @@
 require "rails_helper"
+require "support/authentication_helpers.rb"
 
 feature "Editing tickets" do
 	let!(:project) { FactoryGirl.create :project }
-	let!(:ticket) { FactoryGirl.create :ticket, project: project }
+	let!(:user) { FactoryGirl.create :user }
+	let!(:ticket) { FactoryGirl.create :ticket, project: project, user: user }
 
 	before do
 		visit "/"
+		sign_in_as! user
 		click_link project.name
 		click_link ticket.title
 		click_link "Edit ticket"

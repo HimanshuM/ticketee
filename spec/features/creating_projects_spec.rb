@@ -1,8 +1,10 @@
-require 'spec_helper'
+require 'rails_helper'
+require "support/authentication_helpers"
 
 feature 'Creating Projects' do
 
 	before do
+		sign_in_as! FactoryGirl.create :admin_user
 		visit '/'
 
 		click_link 'New Project'
